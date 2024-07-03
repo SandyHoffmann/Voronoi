@@ -9,7 +9,22 @@ lista_experimentos = [
      {
         'num_points': 256,
         'image': 'circulo.png',
-        'max_points': 10
+        'max_points': 30
+    },
+    {
+        'num_points': 256,
+        'image': 'quadrado.png',
+        'max_points': 30
+    },
+    {
+        'num_points': 256,
+        'image': 'triangulo.png',
+        'max_points': 30
+    },
+    {
+        'num_points': 256,
+        'image': '8.png',
+        'max_points': 30
     },
     {
         'num_points': 256,
@@ -66,11 +81,16 @@ def voronoi(experimento, points=False):
     plt.ylim(0, num_points)
     plt.title('Voronoi Diagram')
 
+# roda o padrão de pontos aleatorios
+# (descomentar se quiser esse modelo)
+# voronoi({
+#     'num_points': 100,
+# }, True)
 
-voronoi({
-    'num_points': 100,
-}, True)
-# for experimento in lista_experimentos:
-#     voronoi(experimento)
+# escolher quantos experimentos deseja rodar
+rodar_n_experimentos = 2
 
-plt.show()
+lista_experimentos = lista_experimentos[0:rodar_n_experimentos]
+for experimento in lista_experimentos:
+    voronoi(experimento)
+    plt.show()
